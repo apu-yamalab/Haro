@@ -2,12 +2,10 @@ require 'bundler/setup'
 require 'sinatra/base'
 require 'rdiscount'
 
-PAGE_DIR = '/Users/hoto/haro_pages/'
-
 class Haro < Sinatra::Base
  
   get '/*' do |path|
-    @title = 'Haro'
+    @title = 'Haro ｜ 山村研究室 情報共有システム'
     @path = Pathname(PAGE_DIR + path)
     raise 'Not Found!' unless @path.exist?
 
