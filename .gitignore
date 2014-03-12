@@ -2,5 +2,5 @@ vendor/*
 .bundle
 *.DS_Store
 *.swp
-/Gemfile.lock
-/config.ru
+Gemfile.lock
+config.ru
