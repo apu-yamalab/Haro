@@ -1,0 +1,52 @@
+html,body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: url(haro.png) no-repeat right bottom fixed;
+}
+
+#header {
+  background-color: #9dd16d;
+  margin: 0;
+  padding: .5em 0;
+}
+
+#header h1 {
+  width: 80%;
+  min-width: 600px;
+  margin: 0 auto;
+}
+
+#header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#breadcrumb {
+  padding: 0;
+  list-style-type: none;
+  width: 80%;
+  min-width: 600px;
+  margin: 2em auto;
+}
+
+#breadcrumb li {
+  display: inline;
+}
+
+#breadcrumb li:after {
+  content: ' > ';
+  color: #999;
+}
+
+#breadcrumb li:last-child:after {
+  content: '';
+}
+
+#content {
+  width: 80%;
+  min-width: 600px;
+  margin: 0 auto;
+}

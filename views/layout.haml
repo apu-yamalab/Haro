@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{ charset: 'UTF-8' }
+    %title= @title
+    %link{ rel: 'stylesheet', href: '/github.css' }
+    %link{ rel: 'stylesheet', href: '/haro.css' }
+  %body
+    #header
+      %h1
+        %a{ href: '/' } Haro
+    %ul#breadcrumb
+      - Pathname(@path.to_url).descend do |name|
+        %li
+          - if name.to_s == @path.to_url
+            = name.to_s.chomp == '/' ? 'トップページ' : name.basename
+          - else
+            %a{ href: name }
+              = name.to_s.chomp == '/' ? 'トップページ' : name.basename
+    #content
+      = yield

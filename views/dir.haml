@@ -1,0 +1,6 @@
+%h1= @path.relative
+
+%ul
+  - @path.files.each do |file|
+    %li
+      %a{ href: file.to_url }= file.basename
