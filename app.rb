@@ -7,7 +7,7 @@ class Haro < Sinatra::Base
   get '/*' do |path|
     @title = 'Haro ｜ 山村研究室 情報共有システム'
     @path = Pathname(PAGE_DIR + path)
-    raise 'Not Found!' unless @path.exist?
+    raise Sinatra::NotFound unless @path.exist?
 
     if @path.file?
       if @path.extname == '.md'
@@ -28,6 +28,10 @@ class Haro < Sinatra::Base
   def md_file(path)
     @content = markdown path.open.read
     haml :file
+  end
+
+  not_found do
+    haml :not_found
   end
 
 end
